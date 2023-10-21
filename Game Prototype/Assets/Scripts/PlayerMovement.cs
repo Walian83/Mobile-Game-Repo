@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
-
-    CharacterController ch;
+    //public float moveSpeed;
+    //CharacterController ch;
+    private Rigidbody rb;
+    public float dodgeSpeed = 5;
+    public float rollSpeed = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-        ch = GetComponent<CharacterController>();
+        //ch = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        //float x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         //float z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        ch.Move(new Vector3(x, 0, moveSpeed * Time.deltaTime));
+        //ch.Move(new Vector3(x, 0, moveSpeed * Time.deltaTime));
+        var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
+        rb.AddForce(horizontalSpeed, 0, rollSpeed);
     }
 }
