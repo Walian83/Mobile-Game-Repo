@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
                     var newObstacle = Instantiate(obstacle, spawnPos, Quaternion.identity);
 
                     newObstacle.SetParent(spawnPoint.transform);
-               }
+                }
             }
         }
     }
