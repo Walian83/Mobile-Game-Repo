@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     private Quaternion nextTileRotation;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         nextTileLocation = startPoint;
         nextTileRotation = Quaternion.identity;
@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
     {
         var newTile = Instantiate(tile, nextTileLocation, nextTileRotation);
 
-        var nextTile = newTile.Find("New Spawn Point");
+        var nextTile = newTile.Find("Next Spawn Point");
         nextTileLocation = nextTile.position;
         nextTileRotation = nextTile.rotation;
     }
