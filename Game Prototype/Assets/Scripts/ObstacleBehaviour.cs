@@ -6,15 +6,17 @@ using UnityEngine.SceneManagement;
 public class ObstacleBehaviour : MonoBehaviour
 {
     public float waitTime = 2.0f;
-    public Transform player;
+    public Score score;
+    public PlayerMovement movement;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>())
-        {
+        { 
             Destroy(collision.gameObject);
-            //player.position.Set(0, 2, 0);
+
             Invoke("GameOver", waitTime);
+
         }
     }
 

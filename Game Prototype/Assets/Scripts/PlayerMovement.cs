@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     //public float moveSpeed;
     //CharacterController ch;
-    private Rigidbody rb;
+    public Rigidbody rb;
     public float dodgeSpeed = 5;
     public float rollSpeed = 5;
 
