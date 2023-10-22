@@ -6,22 +6,21 @@ using UnityEngine.SceneManagement;
 public class ObstacleBehaviour : MonoBehaviour
 {
     public float waitTime = 2.0f;
-
+    public Transform player;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>())
         {
-
             Destroy(collision.gameObject);
-
-            Invoke("ResetGame", waitTime);
+            //player.position.Set(0, 2, 0);
+            Invoke("GameOver", waitTime);
         }
     }
 
-    private void ResetGame()
+    public void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Main Menu");
     }
 
     // Start is called before the first frame update
