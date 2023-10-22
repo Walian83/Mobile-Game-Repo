@@ -5,23 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class ObstacleBehaviour : MonoBehaviour
 {
+    // How long to wait before restarting the game
     public float waitTime = 2.0f;
     public Score score;
     public PlayerMovement movement;
 
     private void OnCollisionEnter(Collision collision)
     {
+        // Check if obstacle collided with the player
         if (collision.gameObject.GetComponent<PlayerMovement>())
         { 
+            // Destroy the player
             Destroy(collision.gameObject);
-
+            // Call the GameOver function after waitTime has passed
             Invoke("GameOver", waitTime);
 
         }
     }
-
+    // Restarts the currently loaded scene/level
     public void GameOver()
     {
+        // Reloads the current scene
         SceneManager.LoadScene("Main Menu");
     }
 

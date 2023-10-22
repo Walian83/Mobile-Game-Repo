@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    // Reference to the tile we want to spawn
     public Transform tile;
 
     public Transform obstacle;
-
+    // Position of the first tile
     public Vector3 startPoint = new Vector3(0, 0, -5);
-
+    // How many tiles to create in the beginning
     public int initSpawnNum = 10;
 
     public int initNoObstacles = 4;
-
+    // Where the next tile should spawn
     private Vector3 nextTileLocation;
-
+    // The next tile's rotation
     private Quaternion nextTileRotation;
 
     // Start is called before the first frame update
     private void Start()
     {
+        // Set starting point
         nextTileLocation = startPoint;
         nextTileRotation = Quaternion.identity;
 
@@ -29,11 +31,11 @@ public class GameController : MonoBehaviour
             SpawnNextTile(i >= initNoObstacles);
         }
     }
-
+    // Will spawn a tile at a certain location and setup the next position
     public void SpawnNextTile(bool spawnObstacles = true)
     {
         var newTile = Instantiate(tile, nextTileLocation, nextTileRotation);
-
+        //the next item
         var nextTile = newTile.Find("Next Spawn Point");
         nextTileLocation = nextTile.position;
         nextTileRotation = nextTile.rotation;

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public float moveSpeed;
-    //CharacterController ch;
+    //Reference to Rigidbody component
     public Rigidbody rb;
+    // Left/right movement speed
     public float dodgeSpeed = 5;
+    // Forward movement speed
     public float rollSpeed = 5;
 
     public enum MobileHorizMovement
@@ -39,16 +40,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //ch = GetComponent<CharacterController>();
+        // Accessing the Rigidbody component
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called at a fixed framerate
     void FixedUpdate()
     {
-        //float x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        //float z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        //ch.Move(new Vector3(x, 0, moveSpeed * Time.deltaTime));
+        //Check for side movement
         var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
 
         #if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_EDITOR
@@ -77,16 +76,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
         #endif
-
+        //Add force during side movement
         rb.AddForce(horizontalSpeed * Time.deltaTime, 0, rollSpeed * Time.deltaTime);
-
-        //if (Input.GetKey("d"))
-        //{
-        //    rb.AddForce(horizontalSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        //}
-        //if (Input.GetKey("a"))
-        //{
-        //    rb.AddForce(horizontalSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        //}
     }
 }
