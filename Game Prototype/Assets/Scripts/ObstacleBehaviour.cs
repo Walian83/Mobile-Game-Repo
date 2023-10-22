@@ -7,10 +7,12 @@ public class ObstacleBehaviour : MonoBehaviour
 {
     public float waitTime = 2.0f;
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>())
         {
+
             Destroy(collision.gameObject);
 
             Invoke("ResetGame", waitTime);

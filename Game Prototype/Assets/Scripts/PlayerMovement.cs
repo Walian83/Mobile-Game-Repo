@@ -18,12 +18,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //float x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         //float z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         //ch.Move(new Vector3(x, 0, moveSpeed * Time.deltaTime));
         var horizontalSpeed = Input.GetAxis("Horizontal") * dodgeSpeed;
-        rb.AddForce(horizontalSpeed, 0, rollSpeed);
+        rb.AddForce(0, 0, rollSpeed * Time.deltaTime);
+
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(horizontalSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(horizontalSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
     }
 }
