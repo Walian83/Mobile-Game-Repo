@@ -717,8 +717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  dodgeSpeed: 50
-  rollSpeed: 300
+  dodgeSpeed: 500
+  rollSpeed: 500
+  horizMovement: 0
 --- !u!135 &805001309
 SphereCollider:
   m_ObjectHideFlags: 0
