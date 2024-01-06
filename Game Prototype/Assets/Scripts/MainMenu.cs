@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         LoadValues();
+        AdManager.instance.bannerAds.HideBannerAd();
     }
 
     public void VolumeSlider(float volume)
@@ -37,6 +38,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        AdManager.instance.bannerAds.ShowBannerAd();
         SceneManager.LoadScene("Gameplay");
     }
 
