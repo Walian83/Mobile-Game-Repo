@@ -4,15 +4,16 @@ using UnityEngine.Advertisements;
 public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] string _androidAdUnitId = "Interstitial_Android";
-    [SerializeField] string _iOsAdUnitId = "Interstitial_iOS";
+    [SerializeField] string _iOSAdUnitId = "Interstitial_iOS";
     string _adUnitId;
 
     void Awake()
     {
-        // Get the Ad Unit ID for the current platform:
-        _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
-            ? _iOsAdUnitId
-            : _androidAdUnitId;
+    #if UNITY_IOS
+        adUnitId = _iOS AdUnitId;
+    #elif UNITY_ANDROID
+        _adUnitId = _androidAdUnitId;
+    #endif
     }
 
     // Load content to the Ad Unit:
@@ -29,6 +30,7 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         // Note that if the ad content wasn't previously loaded, this method will fail
         Debug.Log("Showing Ad: " + _adUnitId);
         Advertisement.Show(_adUnitId, this);
+        LoadAd();
     }
 
     // Implement Load Listener and Show Listener interface methods: 

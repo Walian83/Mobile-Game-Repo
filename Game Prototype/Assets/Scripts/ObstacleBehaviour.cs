@@ -9,6 +9,7 @@ public class ObstacleBehaviour : MonoBehaviour
     public float waitTime = 2.0f;
     public Score score;
     public PlayerMovement movement;
+    public InterstitialAd ad;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,6 +28,7 @@ public class ObstacleBehaviour : MonoBehaviour
     {
         // Reloads the current scene
         SceneManager.LoadScene("Main Menu");
+        ad.ShowAd();
     }
 
     // Start is called before the first frame update
