@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         // Loads the player's saved highest score
-        highScore.text = PlayerPrefs.GetFloat("HighScore", 0).ToString();
+        highScore.text = ("High Score: " + PlayerPrefs.GetFloat("HighScore", 0).ToString("0"));
     }
 
     public void HighScore()
@@ -25,7 +25,7 @@ public class Score : MonoBehaviour
         {
             // Set the high score using the player's position on the Z-axis
             PlayerPrefs.SetFloat("HighScore", player.position.z);
-            highScore.text = player.position.z.ToString();
+            highScore.text = ("High Score: "+ player.position.z.ToString("0"));
         }
     }
 
