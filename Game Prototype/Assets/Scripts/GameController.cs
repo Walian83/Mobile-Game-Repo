@@ -55,18 +55,18 @@ public class GameController : MonoBehaviour
             if (child.CompareTag("ObstacleSpawn"))
             {
                 obstacleSpawnPoints.Add(child.gameObject);
-
-                if (obstacleSpawnPoints.Count > 0)
-                {
-                    var spawnPoint = obstacleSpawnPoints[Random.Range(0, obstacleSpawnPoints.Count)];
-
-                    var spawnPos = spawnPoint.transform.position;
-
-                    var newObstacle = Instantiate(obstacle, spawnPos, Quaternion.identity);
-
-                    newObstacle.SetParent(spawnPoint.transform);
-                }
             }
+    
+        }
+        if (obstacleSpawnPoints.Count > 0)
+        {
+            var spawnPoint = obstacleSpawnPoints[Random.Range(0, obstacleSpawnPoints.Count)];
+
+            var spawnPos = spawnPoint.transform.position;
+
+            var newObstacle = Instantiate(obstacle, spawnPos, Quaternion.identity);
+
+            newObstacle.SetParent(spawnPoint.transform);
         }
     }
 
