@@ -6,6 +6,5 @@ Space flight is an endless runner type of game where you are flying through spac
 
 How to play:
 
-- Tilt phone to go left or right. 
-- Click left or right side of the screen (or use Left and Right arrows / A and D on PC
-- Use the settings menu for volume control
+- Tilt phone to go left or right.
+- On PC, click left or right side of the screen or use A/D / Left Arrow/Right Arrow
