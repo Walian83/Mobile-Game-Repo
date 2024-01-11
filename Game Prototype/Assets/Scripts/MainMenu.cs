@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public Slider volumeSlider = null;
 
-    public TMP_Text volumeTextUI = null;
+    public TMP_Text volumeTextUI = null;    
 
     private void Start()
     {

@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
         ScreenTouch
     }
 
+    // Selected mobile horizontal movement option - the accelerometer
     public MobileHorizMovement horizMovement = MobileHorizMovement.Accelerometer;
 
     private float CalculateMovement(Vector3 pixelPos)
