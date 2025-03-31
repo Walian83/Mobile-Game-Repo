@@ -29,27 +29,27 @@ All the scripts can be found in:</br>
 
 <p align="center">
 Main Menu: <br/>
-<img src="https://imgur.com/1TCDAaK.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/1TCDAaK.png" height="80%" width="80%" alt="Mobile Game Screenshot"/>
 <br />
 
 <p align="center">
 Game Screen: <br/>
-<img src="https://imgur.com/ZuayLjd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/ZuayLjd.png" height="80%" width="80%" alt="Mobile Game Screenshot"/>
 <br />
 
 <p align="center">
 Interstitial Ad: <br/>
-<img src="https://imgur.com/EGeR7ed.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/EGeR7ed.png" height="80%" width="80%" alt="Mobile Game Screenshot"/>
 <br />
 
 <p align="center">
 Ad Manager Code: <br/>
-<img src="https://imgur.com/pHIpSYV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/pHIpSYV.png" height="80%" width="80%" alt="Mobile Game Screenshot"/>
 <br />
  
 <p align="center">
 Ads Code: <br/>
-<img src="https://imgur.com/rBsEpUi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/rBsEpUi.png" height="80%" width="80%" alt="Mobile Game Screenshot"/>
 <br />
 
 <p align="center">
